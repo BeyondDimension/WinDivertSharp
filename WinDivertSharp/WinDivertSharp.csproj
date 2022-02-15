@@ -15,6 +15,7 @@
     <PackageReleaseNotes>Changes this to an unsafe library. Users must now enable unsafe code and perform raw pointer access, just like using the real native library. The reason for this is that we're getting mysterious errors that I can't even be bothered to attempt to fully understand by holding the user's hand like a baby and trying to hide pointer access away from them. If a user doesn't know to perform null checks, or thinks that there's such a thing as "safe" code, then they simply need to go away and hush now.</PackageReleaseNotes>
     <Description>A safe, minimal .NET binding over WinDivert</Description>
     <Copyright>2018 basil, 2018 Jesse Nicholson</Copyright>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyVersion>1.4.3.3</AssemblyVersion>
     <FileVersion>1.4.3.3</FileVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

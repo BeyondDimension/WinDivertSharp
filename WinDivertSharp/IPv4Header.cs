@@ -33,6 +33,7 @@
  */
 
 using System;
+using System.Buffers.Binary;
 using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -57,12 +58,22 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the header length.
         /// </summary>
-        public ushort Length;
+        public ushort Length
+        {
+            get => BinaryPrimitives.ReverseEndianness(length);
+            set => length = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort length;
 
         /// <summary>
         /// Gets or sets the ID.
         /// </summary>
-        public ushort Id;
+        public ushort Id
+        {
+            get => BinaryPrimitives.ReverseEndianness(id);
+            set => id = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort id;
 
         /// <summary>
         /// Private member for <see cref="FragOff"/>, <see cref="Mf"/>, <see cref="Df"/> and <see cref="Reserved"/>
@@ -77,12 +88,17 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the protocol.
         /// </summary>
-        public byte Protocol;
+        public KnownProtocols Protocol;
 
         /// <summary>
         /// Gets or sets the checksum.
         /// </summary>
-        public ushort Checksum;
+        public ushort Checksum
+        {
+            get => BinaryPrimitives.ReverseEndianness(checksum);
+            set => checksum = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort checksum;
 
         /// <summary>
         /// Private member for <see cref="SrcAddr"/>

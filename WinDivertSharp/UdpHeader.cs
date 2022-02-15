@@ -32,6 +32,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 
 namespace WinDivertSharp
@@ -45,21 +46,41 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the source port.
         /// </summary>
-        public ushort SrcPort;
+        public ushort SrcPort
+        {
+            get => BinaryPrimitives.ReverseEndianness(srcPort);
+            set => srcPort = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort srcPort;
 
         /// <summary>
         /// Gets or sets the destination port.
         /// </summary>
-        public ushort DstPort;
+        public ushort DstPort
+        {
+            get => BinaryPrimitives.ReverseEndianness(dstPort);
+            set => dstPort = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort dstPort;
 
         /// <summary>
         /// Gets or sets the length.
         /// </summary>
-        public ushort Length;
+        public ushort Length
+        {
+            get => BinaryPrimitives.ReverseEndianness(length);
+            set => length = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort length;
 
         /// <summary>
         /// Gets or sets the checksum.
         /// </summary>
-        public ushort Checksum;
+        public ushort Checksum
+        {
+            get => BinaryPrimitives.ReverseEndianness(checksum);
+            set => checksum = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort checksum;
     }
 }

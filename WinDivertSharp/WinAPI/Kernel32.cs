@@ -50,7 +50,7 @@ namespace WinDivertSharp.WinAPI
     /// <summary>
     /// WinAPI methods from Kernel32.
     /// </summary>
-    public static class Kernel32
+    public static partial class Kernel32
     {
         /// <summary>
         /// Creates or opens a named or unnamed event object
@@ -102,7 +102,7 @@ namespace WinDivertSharp.WinAPI
         /// </returns>
         [DllImport("kernel32.dll", EntryPoint = "CloseHandle", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool CloseHandle(IntPtr hObject);        
+        public static extern bool CloseHandle(IntPtr hObject);
 
         /// <summary>
         /// Waits until the specified object is in the signaled state or the time-out interval elapses.

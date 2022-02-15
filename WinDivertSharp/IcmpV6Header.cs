@@ -32,6 +32,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 
 namespace WinDivertSharp
@@ -55,7 +56,12 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the checksum.
         /// </summary>
-        public ushort Checksum;
+        public ushort Checksum
+        {
+            get => BinaryPrimitives.ReverseEndianness(checksum);
+            set => checksum = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort checksum;
 
         /// <summary>
         /// Gets or sets the body.

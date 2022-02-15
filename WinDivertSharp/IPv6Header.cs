@@ -34,6 +34,7 @@
 
 
 using System;
+using System.Buffers.Binary;
 using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -60,7 +61,12 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the payload length.
         /// </summary>
-        public ushort Length;
+        public ushort Length
+        {
+            get => BinaryPrimitives.ReverseEndianness(length);
+            set => length = BinaryPrimitives.ReverseEndianness(value);
+        }
+        ushort length;
 
         /// <summary>
         /// Gets or sets the next header type.

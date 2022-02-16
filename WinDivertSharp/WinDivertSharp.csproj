@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net40;net45;net46;net471;netcoreapp3.0;net5.0</TargetFrameworks>
     <AssemblyName>Aigio.WinDivertSharp</AssemblyName>
-    <Version>1.4.4</Version>
+    <Version>1.4.4.1</Version>
     <Authors>https://github.com/AigioL</Authors>
     <Company>长沙次元超越科技有限公司</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

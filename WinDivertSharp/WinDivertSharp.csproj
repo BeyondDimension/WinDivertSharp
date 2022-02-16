@@ -2,22 +2,21 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net40;net45;net46;net471;netcoreapp3.0;net5.0</TargetFrameworks>
-    <Version>1.4.3.3</Version>
-    <Authors>Jesse Nicholson</Authors>
-    <Company>Technik Empire</Company>
+    <AssemblyName>Aigio.WinDivertSharp</AssemblyName>
+    <Version>1.4.4</Version>
+    <Authors>https://github.com/AigioL</Authors>
+    <Company>长沙次元超越科技有限公司</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/TechnikEmpire/WinDivertSharp/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/TechnikEmpire/WinDivertSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/TechnikEmpire/WinDivertSharp.git</RepositoryUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/BeyondDimension/WinDivertSharp/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/BeyondDimension/WinDivertSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BeyondDimension/WinDivertSharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>WinDivert packet-sniffer packet firewall divert-sockets packet-capture</PackageTags>
     <PackageReleaseNotes>Changes this to an unsafe library. Users must now enable unsafe code and perform raw pointer access, just like using the real native library. The reason for this is that we're getting mysterious errors that I can't even be bothered to attempt to fully understand by holding the user's hand like a baby and trying to hide pointer access away from them. If a user doesn't know to perform null checks, or thinks that there's such a thing as "safe" code, then they simply need to go away and hush now.</PackageReleaseNotes>
     <Description>A safe, minimal .NET binding over WinDivert</Description>
-    <Copyright>2018 basil, 2018 Jesse Nicholson</Copyright>
+    <Copyright>© 长沙次元超越科技有限公司. All rights reserved.</Copyright>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.4.3.3</AssemblyVersion>
-    <FileVersion>1.4.3.3</FileVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

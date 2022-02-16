@@ -1,4 +1,4 @@
-﻿#if NET45 || NET46 || NET47
+﻿#if NET45 || NET46 || NET47 || NET40
 namespace System.Runtime.InteropServices
 {
     internal static class RuntimeInformation

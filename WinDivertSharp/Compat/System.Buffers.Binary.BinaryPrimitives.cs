@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // https://github.com/dotnet/runtime/blob/v6.0.2/src/libraries/System.Private.CoreLib/src/System/Buffers/Binary/Reader.cs#L61
 
-#if NET40
+#if NET40 || NET35
 using System.Numerics;
 using System.Runtime.CompilerServices;
 

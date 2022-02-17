@@ -36,6 +36,9 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
+#if !NET35
+using PathCompat = System.IO.Path;
+#endif
 
 namespace WinDivertSharp
 {
@@ -51,7 +54,7 @@ namespace WinDivertSharp
             var baseDir = AppContext.BaseDirectory;
             var libraryPath = Path.Combine(baseDir, WinDivert);
             if (!File.Exists(libraryPath))
-                libraryPath = Path.Combine(baseDir, RuntimeInformation.ProcessArchitecture.ToString(), WinDivert);
+                libraryPath = PathCompat.Combine(baseDir, RuntimeInformation.ProcessArchitecture.ToString(), WinDivert);
             if (!File.Exists(libraryPath))
                 throw new FileNotFoundException(null, libraryPath);
             NativeLibrary.Load(libraryPath);

@@ -61,12 +61,16 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the payload length.
         /// </summary>
+        public ushort length;
+
+        /// <summary>
+        /// Gets or sets the payload length.
+        /// </summary>
         public ushort Length
         {
             get => BinaryPrimitives.ReverseEndianness(length);
             set => length = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort length;
 
         /// <summary>
         /// Gets or sets the next header type.

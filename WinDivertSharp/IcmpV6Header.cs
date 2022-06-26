@@ -56,12 +56,16 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the checksum.
         /// </summary>
+        public ushort checksum;
+
+        /// <summary>
+        /// Gets or sets the checksum.
+        /// </summary>
         public ushort Checksum
         {
             get => BinaryPrimitives.ReverseEndianness(checksum);
             set => checksum = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort checksum;
 
         /// <summary>
         /// Gets or sets the body.

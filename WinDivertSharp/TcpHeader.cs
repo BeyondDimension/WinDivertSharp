@@ -46,12 +46,21 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the source port.
         /// </summary>
+        public ushort srcPort;
+
+        /// <summary>
+        /// Gets or sets the source port.
+        /// </summary>
         public ushort SrcPort
         {
             get => BinaryPrimitives.ReverseEndianness(srcPort);
             set => srcPort = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort srcPort;
+
+        /// <summary>
+        /// Gets or sets the destination port.
+        /// </summary>
+        public ushort dstPort;
 
         /// <summary>
         /// Gets or sets the destination port.
@@ -61,7 +70,11 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(dstPort);
             set => dstPort = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort dstPort;
+
+        /// <summary>
+        /// Gets or sets the sequence number.
+        /// </summary>
+        public uint seqNum;
 
         /// <summary>
         /// Gets or sets the sequence number.
@@ -71,7 +84,11 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(seqNum);
             set => seqNum = BinaryPrimitives.ReverseEndianness(value);
         }
-        uint seqNum;
+
+        /// <summary>
+        /// Gets or sets the acknowledgement number.
+        /// </summary>
+        public uint ackNum;
 
         /// <summary>
         /// Gets or sets the acknowledgement number.
@@ -81,7 +98,6 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(ackNum);
             set => ackNum = BinaryPrimitives.ReverseEndianness(value);
         }
-        uint ackNum;
 
         /// Reserved1 : 4
         /// HdrLength : 4
@@ -97,6 +113,8 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the window.
         /// </summary>
+        public ushort window;
+
         /// <summary>
         /// Gets or sets the window.
         /// </summary>
@@ -105,7 +123,11 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(window);
             set => window = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort window;
+
+        /// <summary>
+        /// Gets or sets the checksum.
+        /// </summary>
+        public ushort checksum;
 
         /// <summary>
         /// Gets or sets the checksum.
@@ -115,7 +137,6 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(checksum);
             set => checksum = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort checksum;
 
         /// <summary>
         /// Gets or sets the urgent pointer.

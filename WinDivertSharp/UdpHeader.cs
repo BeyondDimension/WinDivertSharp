@@ -46,12 +46,21 @@ namespace WinDivertSharp
         /// <summary>
         /// Gets or sets the source port.
         /// </summary>
+        public ushort srcPort;
+
+        /// <summary>
+        /// Gets or sets the source port.
+        /// </summary>
         public ushort SrcPort
         {
             get => BinaryPrimitives.ReverseEndianness(srcPort);
             set => srcPort = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort srcPort;
+
+        /// <summary>
+        /// Gets or sets the destination port.
+        /// </summary>
+        public ushort dstPort;
 
         /// <summary>
         /// Gets or sets the destination port.
@@ -61,7 +70,11 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(dstPort);
             set => dstPort = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort dstPort;
+
+        /// <summary>
+        /// Gets or sets the length.
+        /// </summary>
+        public ushort length;
 
         /// <summary>
         /// Gets or sets the length.
@@ -71,7 +84,11 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(length);
             set => length = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort length;
+
+        /// <summary>
+        /// Gets or sets the checksum.
+        /// </summary>
+        public ushort checksum;
 
         /// <summary>
         /// Gets or sets the checksum.
@@ -81,6 +98,5 @@ namespace WinDivertSharp
             get => BinaryPrimitives.ReverseEndianness(checksum);
             set => checksum = BinaryPrimitives.ReverseEndianness(value);
         }
-        ushort checksum;
     }
 }

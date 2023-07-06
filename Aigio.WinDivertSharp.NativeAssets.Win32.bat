@@ -1,0 +1,1 @@
+nuget pack Aigio.WinDivertSharp.NativeAssets.Win32.nuspec

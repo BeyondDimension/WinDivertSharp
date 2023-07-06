@@ -1,38 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;net35;net40;net45;net46;net471;netcoreapp3.0;net5.0</TargetFrameworks>
-    <AssemblyName>WinDivertSharp</AssemblyName>
-    <PackageId>Aigio.WinDivertSharp</PackageId>
-    <Version>1.4.4.3</Version>
-    <Authors>https://github.com/AigioL</Authors>
-    <Company>长沙次元超越科技有限公司</Company>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>LGPL-3.0-only OR GPL-2.0-only</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/BeyondDimension/WinDivertSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/BeyondDimension/WinDivertSharp.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>WinDivert packet-sniffer packet firewall divert-sockets packet-capture</PackageTags>
-    <PackageReleaseNotes>Changes this to an unsafe library. Users must now enable unsafe code and perform raw pointer access, just like using the real native library. The reason for this is that we're getting mysterious errors that I can't even be bothered to attempt to fully understand by holding the user's hand like a baby and trying to hide pointer access away from them. If a user doesn't know to perform null checks, or thinks that there's such a thing as "safe" code, then they simply need to go away and hush now.</PackageReleaseNotes>
-    <Description>A safe, minimal .NET binding over WinDivert</Description>
-    <Copyright>© 长沙次元超越科技有限公司. All rights reserved.</Copyright>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;netstandard2.0;net35;net40;net45;net46;net471;netcoreapp3.0;net7.0</TargetFrameworks>
+		<AssemblyName>WinDivertSharp</AssemblyName>
+		<PackageId>Aigio.WinDivertSharp</PackageId>
+		<Version>1.4.4.4</Version>
+		<Authors>https://github.com/AigioL</Authors>
+		<Company>长沙次元超越科技有限公司</Company>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>LGPL-3.0-only OR GPL-2.0-only</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/BeyondDimension/WinDivertSharp</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/BeyondDimension/WinDivertSharp.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>WinDivert packet-sniffer packet firewall divert-sockets packet-capture</PackageTags>
+		<PackageReleaseNotes>Changes this to an unsafe library. Users must now enable unsafe code and perform raw pointer access, just like using the real native library. The reason for this is that we're getting mysterious errors that I can't even be bothered to attempt to fully understand by holding the user's hand like a baby and trying to hide pointer access away from them. If a user doesn't know to perform null checks, or thinks that there's such a thing as "safe" code, then they simply need to go away and hush now.</PackageReleaseNotes>
+		<Description>A safe, minimal .NET binding over WinDivert</Description>
+		<Copyright>© 长沙次元超越科技有限公司. All rights reserved.</Copyright>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageOutputPath>$(MSBuildProjectDirectory)\..\pkg</PackageOutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Memory" Version="4.5.4" Condition=" '$(TargetFramework)' == 'netstandard1.1' OR '$(TargetFramework)' == 'netstandard2.0' OR ($(TargetFramework.StartsWith('net4')) AND '$(TargetFramework)' != 'net40') " />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Memory" Version="4.5.4" Condition=" '$(TargetFramework)' == 'netstandard1.1' OR '$(TargetFramework)' == 'netstandard2.0' OR ($(TargetFramework.StartsWith('net4')) AND '$(TargetFramework)' != 'net40') " />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+	</ItemGroup>
 
-  <!-- https://docs.microsoft.com/zh-cn/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders -->
-  <ItemGroup>
-    <!-- win-x86 -->
+	<!-- https://docs.microsoft.com/zh-cn/nuget/create-packages/supporting-multiple-target-frameworks#architecture-specific-folders -->
+	<!--<ItemGroup>
+    -->
+	<!-- win-x86 -->
+	<!--
     <Content Include="..\Lib\WinDivert\x86\WinDivert.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Pack>true</Pack>
@@ -51,7 +54,9 @@
       <PackagePath>runtimes/win-x86/native/WinDivert64.sys</PackagePath>
       <LinkBase>runtimes/win-x86/native</LinkBase>
     </Content>
-    <!-- win-x64 -->
+    -->
+	<!-- win-x64 -->
+	<!--
     <Content Include="..\Lib\WinDivert\x64\WinDivert.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Pack>true</Pack>
@@ -64,7 +69,9 @@
       <PackagePath>runtimes/win-x64/native/WinDivert64.sys</PackagePath>
       <LinkBase>runtimes/win-x64/native</LinkBase>
     </Content>
-    <!-- win-arm64 -->
-  </ItemGroup>
+    -->
+	<!-- win-arm64 -->
+	<!--
+  </ItemGroup>-->
 
 </Project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata minClientVersion="2.12">
+		<id>Aigio.WinDivertSharp.NativeAssets.Win32</id>
+		<title>Aigio.WinDivertSharp.NativeAssets.Win32</title>
+		<version>1.4.4.4</version>
+		<authors>https://github.com/AigioL</authors>
+		<copyright>© 长沙次元超越科技有限公司. All rights reserved.</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">LGPL-3.0-only OR GPL-2.0-only</license>
+		<repository type="git" url="https://github.com/BeyondDimension/WinDivertSharp" />
+		<tags>WinDivert packet-sniffer packet firewall divert-sockets packet-capture</tags>
+		<description>A safe, minimal .NET binding over WinDivert</description>
+	</metadata>
+	<files>
+		<file src="Lib\WinDivert\x86\WinDivert.dll" target="runtimes/win-x86/native/WinDivert.dll" />
+		<file src="Lib\WinDivert\x86\WinDivert32.sys" target="runtimes/win-x86/native/WinDivert32.sys" />
+		<file src="Lib\WinDivert\x86\WinDivert64.sys" target="runtimes/win-x86/native/WinDivert64.sys" />
+		<file src="Lib\WinDivert\x64\WinDivert.dll" target="runtimes/win-x64/native/WinDivert.dll" />
+		<file src="Lib\WinDivert\x64\WinDivert64.sys" target="runtimes/win-x64/native/WinDivert64.sys" />
+		<file src="_._" target="lib/net35/_._" />
+		<file src="_._" target="lib/net40/_._" />
+		<file src="_._" target="lib/netstandard1.0/_._" />
+	</files>
+</package>

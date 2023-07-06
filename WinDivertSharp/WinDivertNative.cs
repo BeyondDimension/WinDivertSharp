@@ -46,19 +46,19 @@ namespace WinDivertSharp
     {
         const string WinDivert = "WinDivert.dll";
 
-        /// <summary>
-        /// Static initializer to get our paths correct.
-        /// </summary>
-        static WinDivertNative()
-        {
-            var baseDir = AppContext.BaseDirectory;
-            var libraryPath = Path.Combine(baseDir, WinDivert);
-            if (!File.Exists(libraryPath))
-                libraryPath = PathCompat.Combine(baseDir, RuntimeInformation.ProcessArchitecture.ToString(), WinDivert);
-            if (!File.Exists(libraryPath))
-                throw new FileNotFoundException(null, libraryPath);
-            NativeLibrary.Load(libraryPath);
-        }
+        ///// <summary>
+        ///// Static initializer to get our paths correct.
+        ///// </summary>
+        //static WinDivertNative()
+        //{
+        //    var baseDir = AppContext.BaseDirectory;
+        //    var libraryPath = Path.Combine(baseDir, WinDivert);
+        //    if (!File.Exists(libraryPath))
+        //        libraryPath = PathCompat.Combine(baseDir, RuntimeInformation.ProcessArchitecture.ToString(), WinDivert);
+        //    if (!File.Exists(libraryPath))
+        //        throw new FileNotFoundException(null, libraryPath);
+        //    NativeLibrary.Load(libraryPath);
+        //}
 
         /// Return Type: HANDLE->void*
         ///filter: char*
